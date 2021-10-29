@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 3%;
+}
+
+.nav_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_container label {
+    font-size: 3rem;
+    display: none;
+}
+
+.logo_name {
+    color: black
+}
+
+.logo_dot {
+    color: blue;
+}
+
+#nav {
+    display: none;
+}
+
+.main_menu ul {
+    list-style: none;
+}
+
+.main_menu li {
+    display: inline-block;
+    padding: 1.2em;
+}
+
+.main_menu a {
+    text-decoration: none;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: black;
+}
+
+.search_container {
+    position: relative;
+    display: flex;
+}
+
+#search {
+    display: none;
+}
+
+.searchbar {
+    border: none;
+    border-radius: 2rem;
+    height: 2.5em;
+    width: 100%;
+    padding-left: 28px;
+    background-color: rgb(216, 207, 207);
+}
+
+.search-icon {
+    position: absolute;
+    color: rgb(167, 164, 164);
+}
+
+.search_responsive {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    color: rgb(167, 164, 164);
+}
+
+.searchbar:focus {
+    border: 1px solid rgb(56, 55, 55);
+    background-color: white;
+}
+
+.search-icon:hover {
+    color: blue;
+}
+
+@media only screen and (max-width: 900px) {
+    .main_menu li {
+        padding: 0.2em;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .nav_container label {
+        display: block;
+        cursor: pointer;
+    }
+    .main_menu {
+        display: none;
+    }
+    .main_menu li {
+        display: block;
+    }
+    #nav:checked~.main_menu {
+        display: block;
+        position: absolute;
+        width: 32%;
+        text-align: left;
+        transform: translate(-24px, 80px);
+        background-color: rgb(196, 192, 192);
+    }
+    #search_responsive {
+        display: none;
+    }
+    .searchbar {
+        display: none;
+    }
+    .search-icon {
+        position: relative;
+        font-size: 1.6rem;
+        margin-top: -50px;
+        color: black;
+    }
+    #search:checked~.searchbar {
+        display: flex;
+        position: absolute;
+        width: 200px;
+        margin: auto;
+        text-align: left;
+        transform: translate(-180px, 80px);
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    #nav:checked~.main_menu {
+        width: 45%;
+    }
+    #search:checked~.searchbar {
+        width: 150px;
+        transform: translate(-130px, 80px);
+    }
+}
